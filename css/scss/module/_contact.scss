@@ -1,0 +1,117 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  CONTACT MODULE STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.contact {
+    background: $cBrandGreen;
+    border-top: 1px solid rgba(#000, 0.15);
+    text-align:center;
+    text-shadow: 0 1px 1px rgba(#000, 0.2);
+    position: relative;
+
+    &:after {
+        @include at-break($breakSmall) {
+            @include font-main-icons;
+            content: "\e608";
+            position: absolute;
+            top: 0.8em;
+            right: 5%;
+            font-size: 3.125em;
+            text-align: center;
+            transform: rotate(-5deg);
+            display:none;
+        }
+        @include at-break($breakMedium) {
+            top: 1.2em;
+            right: 8%;
+            font-size: 4.375em;
+        }
+        @include at-break($breakLarge) {
+            right: 12%;
+            top: 2em;
+        }
+    }
+
+    &.is-in-view:after {
+        display:block;
+        animation: stamp 0.5s 1s ease-out 1 both;
+    }
+
+    .chapter-content {
+        @include at-break($breakSmall) {
+            padding: 0 18.181818181818%;
+        }
+        @include at-break($breakMedium) {
+            padding: 0 23.529411764706%;
+        }
+        @include at-break($breakLarge) {
+            padding: 0 26.086956521739%;
+        }
+    }
+
+    .chapter-header {
+        border-color: rgba(#fff, 0.25);
+    }
+
+    &,
+    a {
+        color: #fff;
+    }
+}
+
+.contact-form {
+    li + li {
+        margin-top: 1.25em;
+        @include at-break($breakMedium) {
+            margin-top: 1.875em;
+        }
+    }
+}
+
+.contact-response {
+    border: 1px solid rgba(#fff, 0.25);
+    border-radius: 3px;
+    position: relative;
+    text-align: center;
+    margin-top: 2.1875em;
+    padding: 1.25em;
+    @include at-break($breakMedium) {
+        margin-top: 2.8125em;
+        padding: 1.875em;
+    }
+
+    &:before {
+        @include font-main-icons;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: -0.75em;
+        background: #fff;
+        color: $cBrandGreen;
+        text-shadow: none;
+        font-size: 1.25em;
+        width: 1.5em;
+        line-height: 1.5;
+        border-radius: 50%;
+        margin-left: -0.75em;
+    }
+    &.type-success:before {
+        content: "\e60d";
+    }
+    &.type-error:before {
+        content: "\e60e";
+    }
+
+    p {
+        line-height: 1.2;
+        font-weight: 700;
+        @include at-break($breakMedium) {
+            font-size: 1.125em;
+        }
+    }
+}

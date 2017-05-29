@@ -1,0 +1,129 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  GLOBAL CONTENT STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.global-content {
+    padding: 2.5em 0.625em;
+    margin: 0 auto;
+    max-width: $maxWidth;
+    @include clear;
+    @include at-break($breakMedium) {
+        padding: 2.5em 1.25em;
+    }
+    @include at-break($breakLarge) {
+        padding: 3.75em 3.125em;
+    }
+
+    > * + * {
+        margin-top: 2.5em;
+        @include at-break($breakMedium) {
+            margin-top: 0;
+        }
+    }
+}
+
+.contact-add {
+    background: $cGrayLt;
+    padding: 1.25em;
+    border: 1px solid $cGray;
+    border-radius: 3px;
+    @include at-break($breakMedium) {
+        float: left;
+        width: 29.411764705882%;
+    }
+    @include at-break($breakLarge) {
+        width: 30.434782608696%;
+    }
+
+    h2 {
+        font-weight: normal;
+        font-size: 1.125em;
+        margin-bottom: 1.11111111111111em;
+        padding-bottom: 1.11111111111111em;
+        border-bottom: 1px solid $cGray;
+    }
+}
+
+.contact-form li + li {
+    margin-top: 1.25em;
+}
+
+.contact-view {
+    @include at-break($breakMedium) {
+        float: right;
+        width: 64.705882352941%;
+    }
+    @include at-break($breakLarge) {
+        width: 65.217391304348%;
+    }
+}
+
+.alert {
+    border: 1px solid $cGray;
+    border-radius: 3px;
+    padding: 1.25em;
+    text-align: center;
+
+    p {
+        font: italic 1em/1.5 $fontText;
+        color: $cGrayDk;
+    }
+}
+
+.entry {
+    padding:1.25em 3.75em 1.25em 1.25em;
+    border-bottom: 1px solid $cGray;
+    position: relative;
+    @include clear;
+
+    &:first-child {
+        border-top: 1px solid $cGray;
+    }
+    &:nth-child(odd) {
+        background: $cGrayLt;
+    }
+
+    h2,
+    p {
+        @include at-break($breakSmall) {
+            width: 50%;
+        }
+    }
+
+    h2 {
+        text-transform: capitalize;
+        margin-bottom: 0.3125em;
+        @include at-break($breakSmall) {
+            float: left;
+        }
+    }
+
+    p {
+        color: $cGrayDk;
+        @include at-break($breakSmall) {
+            float: right;
+            text-align: right;
+        }
+    }
+
+    .button-delete {
+        font-size: 1.25em;
+        line-height: 1;
+        padding: 0;
+        border: 0;
+        width: auto;
+        position: absolute;
+        top: 50%;
+        right: 1em;
+        margin-top: -0.7em;
+
+        &:before {
+            content: "\00D7";
+        }
+    }
+}

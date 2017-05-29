@@ -1,0 +1,307 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  WORK MODULE STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.work-macro {
+    margin-bottom: 1.25em;
+    @include at-break($breakMedium) {
+        margin-bottom: 1.875em;
+    }
+    @include at-break($breakLarge) {
+        margin-bottom:0;
+        float: left;
+        width: 21.739130434783%;
+    }
+}
+
+.work-micro {
+    @include at-break($breakLarge) {
+        float: right;
+        width: 73.913043478261%;
+    }
+}
+
+.work-nav {
+    border: 1px solid rgba(#000, 0.1);
+    border-radius: 3px;
+    background: #f5f5f5;
+    overflow: hidden;
+    @include at-break($breakLarge) {
+        border: none;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    h6,
+    li a {
+        font-size: 0.875em;
+        line-height: 1.2;
+        padding: 1.42857142857143em;
+        @include at-break($breakMedium) {
+            padding: 2.14285714285714em 1.42857142857143em;
+        }
+    }
+    h6 {
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    h6.menu-toggle {
+        position: relative;
+        padding-right: 3.85714285714286em;
+
+        &:hover,
+        &:focus {
+            color: $cBrandBlueLt;
+        }
+
+        &:after {
+            @include font-main-icons;
+            position: absolute;
+            content: "\e60a";
+            right: 1.42857142857143em;
+            transition: transform 0.25s ease;
+        }
+    }
+    &.is-active h6.menu-toggle {
+        &:after {
+            transform: rotate(135deg);
+        }
+    }
+    ul {
+        counter-reset: project-count;
+    }
+    li {
+        counter-increment: project-count;
+        border-top: 1px solid rgba(#000, 0.1);
+    }
+    li:first-child {
+        @include at-break($breakLarge) {
+            border-top: none;
+        }
+    }
+    li a {
+        padding-left: 3.57142857142857em;
+        display:block;
+        font-weight: 700;
+        position: relative;
+        @include at-break($breakMedium) {
+            padding-left: 3.57142857142857em;
+        }
+    }
+    li a:before {
+        content: counter(project-count); 
+        position: absolute; 
+        left: 1.42857142857143em;
+        background: $cBrandBlue;
+        color: #fff;
+        text-shadow: 0px 1px 1px rgba(#000, 0.2);
+        border-radius: 0.6em;
+        min-width: 1.2em;
+        text-align: center;
+        display: inline-block;
+    }
+    li a:hover:before {
+        background: $cBrandBlueLt;
+    }
+    li.is-in-view a {
+        background: rgba($cBrandBlueLt, 0.1);
+    }
+}
+
+.project + .project {
+    margin-top: 3.125em;
+    @include at-break($breakMedium) {
+        margin-top: 6.25em;
+    }
+}
+
+.project-header {
+    position: relative;
+    border-bottom: 4px double rgba(#000, 0.1);
+    padding-bottom: 1.25em;
+    margin-bottom: 1.25em;
+    @include at-break($breakMedium) {
+        padding-bottom: 1.875em;
+        margin-bottom: 1.875em;
+    }
+
+    .title {
+        margin-right: 5em;
+
+        h3 {
+            font-size: 1.875em;
+            font-weight: 300;
+            line-height: 1.2;
+            @include at-break($breakMedium) {
+                font-size: 2.5em;
+            }
+            @include at-break($breakLarge) {
+                font-size: 3.125em;
+            }
+        }
+    }
+
+    .actions {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -2.5em;
+        @include at-break($breakMedium) {
+            margin-top: -2.8125em;
+        }
+    }
+}
+
+.project-media {
+    margin-bottom: -1.25em;
+    @include clear;
+    @include at-break($breakMedium) {
+        margin: 0 0 -1.875em -5.882352941176%;
+    }
+
+    figure {
+        border: 1px solid #bbb;
+        border-top: 20px solid #bbb;
+        border-radius: 5px 5px 0 0;
+        position: relative;
+        margin-bottom: 1.25em;
+        box-shadow: 0 1px 2px rgba(#000, 0.1);
+        @include at-break($breakMedium) {
+            float: left;
+            margin: 0 0 1.875em 5.555555555556%;
+        }
+
+        &.format-l {
+            @include at-break($breakMedium) {
+                width: 94.444444444444%;
+            }
+        }
+        &.format-m {
+            @include at-break($breakMedium) {
+                width: 61.111111111111%;
+            }
+        }
+        &.format-s {
+            @include at-break($breakMedium) {
+                width: 27.777777777778%;
+            }
+        }
+
+        &:after {
+            @include font-main-icons;
+            content: "\e60b";
+            position: absolute;
+            left: 5px;
+            top: -15px;
+            color: #fff;
+            font-size: 0.625em;
+        }
+
+        a {
+            position: relative;
+            display:block;
+
+            &:before,
+            &:after {
+                position: absolute;
+                opacity: 0;
+            }
+            &:before {
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 2;
+                background: rgba($cBrandBlueLt, 0.5);
+                display: block;
+                content: "";
+            }
+            &:after {
+                @include font-main-icons;
+                left: 50%;
+                top: 50%;
+                margin: -1.36363636363636em 0 0 -1.36363636363636em;
+                content: "\e606";
+                display:block;
+                z-index: 3;
+                background: rgba(#fff, 0.9);
+                font-size: 1.375em;
+                line-height: 2.72727272727273;
+                min-width: 2.72727272727273em;
+                text-align: center;
+                border-radius: 1.36363636363637em;
+                transform: translateY(-20%);
+            }
+            &:hover:before,
+            &:hover:after {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+    }
+
+    img {
+        display:block;
+        width:100%;
+    }
+}
+
+.project-description {
+    border-top: 1px solid rgba(#000, 0.1);
+    margin-top: 1.25em;
+    padding-top: 1.25em;
+    @include clear;
+    @include at-break($breakMedium) {
+        margin-top: 1.875em;
+        padding-top: 1.875em;
+    }
+
+    .overview {
+        @include at-break($breakMedium) {
+            width: 64.705882352941%;
+            float: left;
+        }
+
+        p {
+            font-family: $fontText;
+            line-height: 1.5;
+            @include at-break($breakLarge) {
+                font-size: 1.125em;
+            }
+        }
+    }
+
+    .roles {
+        margin-top: 1.25em;
+        @include at-break($breakMedium) {
+            width: 29.411764705882%;
+            float: right;
+            margin-top: 0;
+        }
+
+        h4,
+        li {
+            font-size: 0.875em;
+            line-height: 1.2;
+        }
+
+        h4 {
+            text-transform: uppercase;
+            margin-top: 0.5em;
+            @include at-break($breakLarge) {
+                margin-top: 0.65em;
+            }
+        }
+
+        li {
+            color: #999;
+            margin-top: 0.8em;
+        }
+    }
+}

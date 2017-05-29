@@ -1,0 +1,71 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  GLOBAL FOOTER STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.global-footer {
+    background: #444;
+    border-top: 1px solid rgba(#000, 0.25);
+    text-shadow: 0 1px 1px rgba(#000, 0.2);
+    text-align: center;
+    line-height:1.2;
+    padding: 2.5em 0.625em;
+    @include at-break($breakMedium) {
+        text-align: left;
+        padding: 2.5em 1.25em;
+    }
+
+    &,
+    a {
+        color: #fff;
+    }
+
+    a:hover,
+    a:focus {
+        text-decoration: underline;
+    }
+}
+
+.footer-inner {
+    max-width: $maxWidth; 
+    margin: 0 auto;
+}
+
+.footer-content {
+    @include clear;
+
+    > * + * {
+        margin-top:0.625em;
+        @include at-break($breakMedium) {
+            margin-top:0;
+        }
+    }
+}
+
+.global-footer .footer-nav {
+    @include at-break($breakMedium) {
+        float: left;
+    }
+
+    li {
+        display: inline-block;
+        font-size: 0.875em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    li + li {
+        margin-left: 1em;
+    }
+}
+
+.global-footer .copyright {
+    font-size: 0.875em;
+    @include at-break($breakMedium) {
+        float: right;
+    }
+}

@@ -1,0 +1,60 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  MENU LAYOUT STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.menu {
+    .menu-toggle, 
+    .menu-content {
+        @include transition-basic;
+    }
+    .menu-toggle {
+        cursor: pointer;
+    }
+    .menu-content {
+        max-height: 0; 
+        overflow: hidden;
+    }
+    
+    &.reveal-at-medium {
+        @include at-break($breakMedium) {
+            .menu-toggle {
+                display: none;
+            }
+            .menu-content {
+                max-height: none;
+                overflow: visible;
+            }
+        }
+    }
+    &.reveal-at-large {
+        @include at-break($breakLarge) {
+            .menu-toggle {
+                display: none;
+            }
+            .menu-content {
+                max-height: none;
+                overflow: visible;
+            }
+        }
+    }
+    
+    &.is-active .menu-content {
+        max-height: 50em; 
+        overflow: visible;
+    }
+
+    .no-js & {
+        .menu-toggle {
+            display: none;
+        }
+        .menu-content {
+            max-height: none;
+            overflow: visible;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--General Meta Data-->
+        <title>Michael Marcialis | Web Designer &amp; Front-End Developer</title>
+        <meta name="description" content="Michael Marcialis is a DC-area resident, web designer, front-end developer,  life-long video game nerd, smitten husband and proud daddy.">
+        <meta name="date" content="2015-07-13" />
+
+        <!--Open Graph Protocol-->
+        <meta property="og:title" content="Michael Marcialis | Web Designer &amp; Front-End Developer" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://www.marcial.is" />
+        <meta property="og:image" content="http://www.marcial.is/img/opengraph.jpg" />
+        <meta property="og:description" content="Michael Marcialis is a DC-area resident, web designer, front-end developer,  life-long video game nerd, smitten husband and proud daddy." />
+        <meta property="og:site_name" content="Michael Marcialis" />
+
+        <!--Twitter Cards-->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@MikeMarcialis" />
+
+        <!--Favicons-->
+        <link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="favicon-194x194.png" sizes="194x194">
+        <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="manifest.json">
+        <meta name="msapplication-TileColor" content="#007bc4">
+        <meta name="msapplication-TileImage" content="mstile-144x144.png">
+        <meta name="theme-color" content="#007bc4">
+
+        <!--Styles-->
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--Modernizr-->
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+
+    <body>
+        <div class="global-wrapper">
+            <header class="global-header">
+                <h1>Phone Book</h1>
+                <p>The Less-Than-Epic, Client-Side Edition</p>
+            </header><!--/.global-header-->
+
+            <main class="global-content" role="main">
+                <section class="contact-add">
+                    <h2>Manage Contacts</h2>
+
+                    <form id="contactForm" class="contact-form">
+                        <fieldset>
+                            <ul>
+                                <li>
+                                    <label for="contactFirstName">First Name</label>
+                                    <input type="text" name="contactFirstName" id="contactFirstName" placeholder="Jane" required />
+                                </li>
+                                <li>
+                                    <label for="contactLastName">Last Name</label>
+                                    <input type="text" name="contactLastName" id="contactLastName" placeholder="Doe" required />
+                                </li>
+                                <li>
+                                    <label for="contactPhone">Phone Number</label>
+                                    <input type="tel" pattern="^\d{3}-\d{3}-\d{4}$" name="contactPhone" id="contactPhone" placeholder="123-456-7890" required />
+                                </li>
+                                <li>
+                                    <button id="buttonSubmit" type="submit">Add Contact</button>
+                                </li>
+                                <li>
+                                    <button id="buttonReset" type="reset">Reset Form</button>
+                                </li>
+                                <li>
+                                    <button id="buttonClear" type="button">Clear Phone Book</button>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </form><!--/.contact-form-->
+                </section><!--/.contact-add-->
+
+                <section class="contact-view">
+                    <!--Dynamic Content Placed Here...-->
+                </section><!--/.contact-view-->
+            </main><!--/.global-content-->
+        </div><!--/.global-wrapper-->
+
+        <!--jQuery From Google & Local Fallback-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+
+        <!--Third Party Plugins-->
+        <script src="js/plugins.min.js"></script>
+
+        <!--Custom Functions After Page Load-->
+        <script src="js/main.min.js"></script>
+    </body>
+</html>

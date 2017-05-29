@@ -1,0 +1,107 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  GLOBAL HEADER STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.global-header {
+    background: #007bc4;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(#000, 0.2);
+    border-bottom: 1px solid rgba(#000, 0.15);
+    padding: 1.25em 0.625em 2.5em;
+    @include at-break($breakMedium) {
+        padding: 3.125em 1.25em 6.25em;
+    }
+    @include at-break($breakLarge) {
+        padding: 3.125em $gutter 6.25em;
+    }
+
+    &,
+    a {
+        color: #fff;
+    }
+}
+
+.header-inner {
+    max-width: $maxWidth; 
+    margin: 0 auto;
+}
+
+.header-content {
+    @include at-break($breakSmall) {
+        margin: 0 18.181818181818%;
+    }
+    @include at-break($breakMedium) {
+        margin: 0 11.764705882353%;
+    }
+    @include at-break($breakLarge) {
+        margin: 0 17.391304347826%;
+    }
+
+    > * + * {
+        margin-top: 1.25em;
+
+        @include at-break($breakMedium) {
+            margin-top: 3.125em;
+        }
+    }
+}
+
+.global-header .branding {
+    animation:star-wars 1s 0.5s ease 1 backwards;
+
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 3.75em;
+        @include at-break($breakMedium) {
+            width: 5.625em;
+        }
+        @include at-break($breakLarge) {
+            width: auto;
+        }
+    }
+}
+
+.global-header .intro {
+    animation:star-wars 1s 1.5s ease 1 backwards;
+
+    h1 {
+        font-size: 2.125em;
+        font-weight: 800;
+        line-height: 1.1;
+        border-bottom: 4px double rgba(#fff, 0.25);
+        padding-bottom: 0.58823529411765em;
+        margin-bottom: 0.58823529411765em;
+        @include at-break($breakMedium) {
+            font-size: 3.125em;
+            padding-bottom: 0.4em;
+            margin-bottom: 0.4em;
+        }
+        @include at-break($breakLarge) {
+            font-size: 4.375em;
+            padding-bottom: 0.71428571428571em;
+            margin-bottom: 0.71428571428571em;
+        }
+        @include at-break($breakExtra) {
+            font-size: 5.625em;
+            padding-bottom: 0.55555555555556em;
+            margin-bottom: 0.55555555555556em;
+        }
+    }
+
+    p {
+        font-family: $fontText;
+        line-height:1.5;
+        @include at-break($breakMedium) {
+            font-size: 1.25em;
+        }
+        @include at-break($breakLarge) {
+            font-size: 1.5em;
+        }
+    }
+}

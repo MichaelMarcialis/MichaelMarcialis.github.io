@@ -1,0 +1,75 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  ABOUT MODULE STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.about {
+    background: $cBrandTeal url('/img/holden-s.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(#000, 0.2);
+    @include at-break($breakMedium) {
+        background-image: url('/img/holden-l.jpg');
+    }
+    @include at-break($breakLarge) {
+        background-attachment: fixed;
+    }
+
+    .chapter-content {
+        @include at-break($breakSmall) {
+            margin: 0 18.181818181818%;
+        }
+        @include at-break($breakMedium) {
+            margin: 0 0 0 47.058823529412%;
+        }
+        @include at-break($breakLarge) {
+            margin-left: 52.173913043478%;
+        }
+    }
+
+    .chapter-header {
+        border-color: rgba(#fff, 0.25);
+    }
+
+    &,
+    a {
+        color: #fff;
+    }
+}
+
+.about-description p {
+    font-family: $fontText;
+    line-height: 1.5;
+    @include at-break($breakLarge) {
+        font-size: 1.125em;
+    }
+
+    & + p {
+        margin-top: 1.5em;
+    }
+}
+
+.about-list {
+    margin-top: 1.25em;
+    padding-top: 1.25em;
+    border-top: 4px double rgba(#fff, 0.25);
+    @include clear;
+    @include at-break($breakMedium) {
+        margin-top: 2.14285714285714em;
+        padding-top: 2.14285714285714em;
+    }
+
+    li {
+        display: inline;
+    }
+    li + li {
+        margin-left: 0.5em;
+        @include at-break($breakLarge) {
+            margin-left: 2.5em;
+        }
+    }
+}

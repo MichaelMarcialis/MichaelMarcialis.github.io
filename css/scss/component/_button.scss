@@ -1,0 +1,39 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  BUTTON COMPONENT STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.button {
+    font-size: 1.375em;
+    line-height: 2.63636363636364;
+    min-width: 2.72727272727273em;
+    text-align: center;
+    border: 1px solid rgba(#000, 0.1);
+    border-radius: 1.36363636363637em;
+    display: inline-block;
+
+    &:hover,
+    &:focus {
+        background: $cBrandBlueLt;
+        border-color: $cBrandBlueLt;
+        color: #fff;
+        text-shadow: 0 1px 1px rgba(#000, 0.2);
+    }
+}
+
+.button.color-inverted {
+    color: #fff;
+    border-color: rgba(#fff, 0.25);
+
+    &:hover,
+    &:focus {
+        background: #fff;
+        border-color: #fff;
+        color: $cBrandBlueLt;
+        text-shadow: none;
+    }
+}

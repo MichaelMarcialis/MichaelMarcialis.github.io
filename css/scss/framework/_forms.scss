@@ -1,0 +1,48 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  FORM STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+label {
+    @include is-hidden-accessible;
+}
+input, 
+textarea {
+    display: block;
+    width: 100%;
+    font: normal 1em/1.2 $fontText; 
+    color: $cBrandGreen; 
+    padding: 1.275em 1.25em; 
+    background: #fff; 
+    border:none;
+    @include at-break($breakMedium) {
+        padding: 1.275em 1.875em;
+    }
+    @include at-break($breakLarge) {
+        font-size: 1.125em;
+        padding: 1.06666666666667em 1.66666666666667em;
+    }
+}
+
+input {
+    height: 3.75em;
+    border-radius: 3px;
+    @include at-break($breakLarge) {
+        height: 3.33333333333333em;
+    }
+}
+textarea {
+    height: 18.75em;
+    border-radius: 3px 3px 0 0;
+    background: #fff url(/img/ragged-edge.svg) repeat-x left bottom;
+    resize:none;
+    @include at-break($breakLarge) {
+        height: 16.66666666666667em;
+    }
+}
+
+label {font-weight:700; font-size:0.875em; color:#000;}

@@ -1,0 +1,90 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  ICON FONT DECLARATIONS
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+/*==========================================================================
+  MAIN ICONS
+==========================================================================*/
+
+@font-face {
+    font-family: 'main-icons';
+    src: url('/fonts/main-icons/main-icons.eot');
+    src: url('/fonts/main-icons/main-icons.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/main-icons/main-icons.woff2') format('woff2'),
+         url('/fonts/main-icons/main-icons.woff') format('woff'),
+         url('/fonts/main-icons/main-icons.ttf') format('truetype'),
+         url('/fonts/main-icons/main-icons.svg#main-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  ICON CHARACTER MAPPING
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+/*==========================================================================
+  MAIN ICONS
+==========================================================================*/
+
+[class^="icon-"] {
+    @include font-main-icons;
+}
+
+.icon-facebook:before {
+    content: "\e600";
+}
+.icon-twitter:before {
+    content: "\e601";
+}
+.icon-linkedin:before {
+    content: "\e602";
+}
+.icon-work:before {
+    content: "\e603";
+}
+.icon-about:before {
+    content: "\e604";
+}
+.icon-contact:before {
+    content: "\e605";
+}
+.icon-view:before {
+    content: "\e606";
+}
+.icon-resume:before {
+    content: "\e607";
+}
+.icon-stamp:before {
+    content: "\e608";
+}
+.icon-send:before {
+    content: "\e609";
+}
+.icon-plus:before {
+    content: "\e60a";
+}
+.icon-dots:before {
+    content: "\e60b";
+}
+.icon-menu:before {
+    content: "\e60c";
+}
+.icon-success:before {
+    content: "\e60d";
+}
+.icon-error:before {
+    content: "\e60e";
+}

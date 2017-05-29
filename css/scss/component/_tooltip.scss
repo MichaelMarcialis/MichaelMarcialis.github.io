@@ -1,0 +1,60 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  TOOLTIP COMPONENT STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.tooltip {
+    position: relative;
+    z-index: 100;
+}
+
+.tooltip-text {
+    @include is-hidden-accessible;
+    opacity: 0;
+    display:block;
+    font-size: 0.54545454545455em;
+    font-weight: 700;
+    background: $cBrandBlueLt;
+    border-radius: 3px;
+    line-height: 1.2;
+    padding: 0.83333333333333em;
+    transform: translateY(1em);
+    width: 6.66666666666667em;
+    margin-left: -3.33333333333333em;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    &:after {
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        margin-left: -5px;
+        display: block;
+        width: 0;
+        height: 0;
+        content: "";
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: 5px solid $cBrandBlueLt;
+    }
+
+    .tooltip:hover & {
+        left: 50%;
+        top: 5.83333333333333em;
+        transform: translateY(0);
+        opacity: 0.75;
+        color: #fff;
+    }
+}
+
+.tooltip.color-inverted .tooltip-text {
+    color: $cBrandBlueLt;
+    background: #fff;
+
+    &:after {
+        border-bottom-color: #fff;
+    }
+}

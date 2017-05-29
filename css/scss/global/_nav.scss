@@ -1,0 +1,106 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  GLOBAL NAVIGATION STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.global-nav {
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(#000, 0.2);
+
+    &,
+    a {
+        color: #fff;
+    }
+
+    h6,
+    li {
+        text-transform: uppercase;
+        @include at-break($breakLarge) {
+            font-size: 1.25em;
+        }
+    }
+    h6,
+    li a {
+        padding: 1.25em 0.625em;
+        @include at-break($breakMedium) {
+            padding: 1.25em;
+        }
+        @include at-break($breakLarge) {
+            padding: 2.5em 1.25em;
+        }
+    }
+
+    h6 {
+        background: $cBrandTeal;
+
+        &:hover,
+        &:focus {
+            background: $cBrandTealLt;
+        }
+    }
+    &.menu.is-active h6 {
+        border-bottom:1px solid rgba(#000, 0.15);
+    }
+
+    ul {
+        @include clear;
+    }
+    li {
+        font-weight: 700;
+        @include at-break($breakMedium) {
+            float: left;
+            width: 33.33333333333333%;
+        }
+    }
+    li a {
+        display: block;
+        background: $cBrandGreen;
+        @include at-break($breakMedium) {
+            border-right: 1px solid rgba(#000, 0.15);
+        }
+
+        &:hover,
+        &:focus {
+            background: $cBrandGreenLt;
+        }
+    }
+    li + li a {
+        border-top:1px solid rgba(#000, 0.15);
+        @include at-break($breakMedium) {
+            border-top:none;
+        }
+    }
+    li:last-child a {
+        @include at-break($breakMedium) {
+            border-right: none;
+        }
+    }
+    li a[href="#work"] {
+        @include at-break($breakMedium) {
+            background: $cBrandBlue;
+            border-top: 1px solid $cBrandBlue;
+            margin-top:-1px;
+            position:relative;
+            z-index:2;
+
+            &:hover,
+            &:focus {
+                background: $cBrandBlueLt;
+            }
+        }
+    }
+    li a[href="#about"] {
+        @include at-break($breakMedium) {
+            background: $cBrandTeal;
+
+            &:hover,
+            &:focus {
+                background: $cBrandTealLt;
+            }
+        }
+    }
+}

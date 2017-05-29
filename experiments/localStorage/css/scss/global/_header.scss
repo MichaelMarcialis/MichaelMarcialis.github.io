@@ -1,0 +1,64 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  GLOBAL HEADER STYLES
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+.global-header {
+    background: $cBrandBlue;
+    border-bottom: 5px solid $cBrandTeal;
+    text-align: center;
+    color: #fff;
+    padding: 2.5em 0.625em;
+    @include at-break($breakMedium) {
+        padding: 2.5em 1.25em;
+    }
+    @include at-break($breakLarge) {
+        padding: 3.75em 3.125em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-bottom: 0.25em;
+        line-height: 1.2;
+        text-transform: uppercase;
+        @include at-break($breakMedium) {
+            font-size: 3.75em;
+            margin-bottom: 0.16666666666667em;
+        }
+    }
+    p {
+        font: italic 0.875em/1.42857142857143 $fontText;
+        background: #fff;
+        display: inline-block;
+        color: $cBrandBlue;
+        position: relative;
+        padding: 0 1.42857142857143em;
+        @include at-break($breakMedium) {
+            font-size: 1.25em;
+        }
+
+        &:before,
+        &:after {
+            position: absolute;
+            width: 0;
+            height: 0;
+            display: block;
+            content: "";
+            border-top: 0.71428571428571em solid transparent;
+            border-bottom: 0.71428571428571em solid transparent;
+            top: 0;
+        }
+        &:before {
+            border-left: 0.71428571428571em solid $cBrandBlue;
+            left: 0;
+        }
+        &:after {
+            border-right: 0.71428571428571em solid $cBrandBlue;
+            right: 0;
+        }
+    }
+}

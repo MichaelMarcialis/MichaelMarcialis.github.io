@@ -1,0 +1,104 @@
+/*********************************************************************************************************
+**********************************************************************************************************
+***
+***  SASS MIXINS
+***
+**********************************************************************************************************
+*********************************************************************************************************/
+
+
+/*==========================================================================
+  MEDIA QUERY MIXINS
+==========================================================================*/
+
+/*Example: @include at-break(em-width or breakpoint-variable) {...}*/
+@mixin at-break($viewportWidth) {
+    @media only screen and (min-width: $viewportWidth) {
+        @content; 
+    }
+}
+
+/*Example: @include under-break(em-width or breakpoint-variable) {...}*/
+@mixin under-break($viewportWidth) {
+    @media only screen and (max-width: ($viewportWidth - 0.0625em)) {
+        @content;
+    }
+}
+
+/*Example: @include between-breaks(em-width or breakpoint-variable, em-width or breakpoint-variable) {...}*/
+@mixin between-breaks($viewportWidthMin, $viewportWidthMax) {
+    @media only screen and (min-width: $viewportWidthMin) and (max-width: ($viewportWidthMax - 0.0625em)) {
+        @content;
+    }
+}
+
+@mixin at-retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+        @content;
+    }
+}
+
+
+/*==========================================================================
+  FLOAT MIXINS
+==========================================================================*/
+
+@mixin clear {
+    &:after {
+        content: ""; 
+        display: table; 
+        clear: both;
+    }
+}
+
+
+/*==========================================================================
+  HIDDEN CONTENT MIXINS
+==========================================================================*/
+
+@mixin is-hidden-accessible {
+    position: absolute; 
+    left: -999em; 
+    top: -999em;
+}
+@mixin is-revealed-accessible {
+    position: relative; 
+    left: auto; 
+    top: auto;
+}
+
+
+/*==========================================================================
+  ICON FONT MIXINS
+==========================================================================*/
+
+@mixin font-main-icons {
+    font-family: "main-icons"; 
+    speak: none; 
+    font-style: normal; 
+    font-weight: normal; 
+    font-variant: normal; 
+    text-transform: none; 
+    line-height: 1;
+}
+
+
+/*==========================================================================
+  TRANSITION MIXINS
+==========================================================================*/
+
+@mixin transition-basic {
+    transition: all 0.25s ease;
+}
+
+
+/*==========================================================================
+  HOVER MIXINS
+==========================================================================*/
+
+@mixin hover-color($colorChoice) {
+    &:hover,
+    &:focus {
+        color: $colorChoice;
+    }
+}
